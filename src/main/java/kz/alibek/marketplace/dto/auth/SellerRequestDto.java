@@ -1,6 +1,4 @@
-package kz.alibek.marketplace.dto;
-
-import lombok.Data;
+package kz.alibek.marketplace.dto.auth;
 
 public record SellerRequestDto (
         String name,
