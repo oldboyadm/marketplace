@@ -16,32 +16,12 @@ public record CategoryResponseDto(
         LocalDateTime updatedAt
 ) {
     public static CategoryResponseDto of(Category category) {
-        List<SubcategoryResponseDto> dtos = new ArrayList<>();
-        for (Subcategory subcategory : category.getSubcategories()) {
-            List<CharacteristicResponseDto> characteristicDto = new ArrayList<>();
-            for (Characteristic chrctr : subcategory.getCharacteristics()) {
-                CharacteristicResponseDto characteristicResponseDto = new CharacteristicResponseDto(
-                        chrctr.getId(),
-                        chrctr.getName(),
-                        chrctr.getCreatedAt(),
-                        chrctr.getUpdatedAt()
-                );
-                characteristicDto.add(characteristicResponseDto);
-            }
-            SubcategoryResponseDto dto = new SubcategoryResponseDto(
-                    subcategory.getId(),
-                    subcategory.getName(),
-                    characteristicDto,
-                    subcategory.getCreatedAt(),
-                    subcategory.getUpdatedAt()
-
-            );
-
-        }
         return new CategoryResponseDto(
                 category.getId(),
                 category.getName(),
-                dtos,
+                category.getSubcategories().stream().map((subcategory -> {
+                    return SubcategoryResponseDto.of(subcategory);
+                })).toList(),
                 category.getCreatedAt(),
                 category.getUpdatedAt()
                 );
