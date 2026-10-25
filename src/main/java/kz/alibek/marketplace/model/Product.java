@@ -7,6 +7,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +26,7 @@ public class Product {
     @Column(nullable = false,length = 1000)
     private String description;
 
-    @Column(nullable = false, name = "photo_url")
+    @Column(nullable = false, name = "photo_url",length = 1000)
     private String photoUrl;
 
     @Column(nullable = false)
@@ -39,4 +41,7 @@ public class Product {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "product",cascade = CascadeType.PERSIST)
+    private List<ProductCharacteristic> productCharacteristics = new ArrayList<>();
 }

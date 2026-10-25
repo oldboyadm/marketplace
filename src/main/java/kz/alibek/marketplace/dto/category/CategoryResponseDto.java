@@ -24,6 +24,18 @@ public record CategoryResponseDto(
                 })).toList(),
                 category.getCreatedAt(),
                 category.getUpdatedAt()
-                );
+        );
+    }
+
+    public static CategoryResponseDto withoutCharacteristics(Category category) {
+        return new CategoryResponseDto(
+                category.getId(),
+                category.getName(),
+                category.getSubcategories().stream().map((subcategory -> {
+                    return SubcategoryResponseDto.withoutCharacteristics(subcategory);
+                })).toList(),
+                category.getCreatedAt(),
+                category.getUpdatedAt()
+        );
     }
 }

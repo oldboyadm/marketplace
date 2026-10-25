@@ -12,14 +12,25 @@ public record SubcategoryResponseDto(
         LocalDateTime createdAt,
         LocalDateTime updatedAt
 ) {
-    public static SubcategoryResponseDto of (Subcategory subcategory){
+    public static SubcategoryResponseDto of(Subcategory subcategory) {
         return new SubcategoryResponseDto(
                 subcategory.getId(),
                 subcategory.getName(),
                 subcategory.getCharacteristics().stream().map(
-                        (characteristic)->{
+                        (characteristic) -> {
                             return CharacteristicResponseDto.of(characteristic);
                         }).toList(),
+                subcategory.getCreatedAt(),
+                subcategory.getUpdatedAt()
+        );
+
+    }
+
+    public static SubcategoryResponseDto withoutCharacteristics(Subcategory subcategory) {
+        return new SubcategoryResponseDto(
+                subcategory.getId(),
+                subcategory.getName(),
+                null,
                 subcategory.getCreatedAt(),
                 subcategory.getUpdatedAt()
         );

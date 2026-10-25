@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product_characteristics")
-public class ProductsCharacteristic {
+public class ProductCharacteristic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
