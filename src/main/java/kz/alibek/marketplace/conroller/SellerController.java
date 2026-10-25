@@ -1,9 +1,8 @@
 package kz.alibek.marketplace.conroller;
 
-import kz.alibek.marketplace.dto.AuthResponseDto;
-import kz.alibek.marketplace.dto.LoginRequestDto;
-import kz.alibek.marketplace.dto.SellerAuthResponseDto;
-import kz.alibek.marketplace.dto.SellerRequestDto;
+import kz.alibek.marketplace.dto.auth.LoginRequestDto;
+import kz.alibek.marketplace.dto.auth.SellerAuthResponseDto;
+import kz.alibek.marketplace.dto.auth.SellerRequestDto;
 import kz.alibek.marketplace.model.Shop;
 import kz.alibek.marketplace.model.User;
 import kz.alibek.marketplace.model.UserRole;

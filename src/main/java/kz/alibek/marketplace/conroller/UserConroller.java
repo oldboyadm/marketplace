@@ -1,18 +1,15 @@
 package kz.alibek.marketplace.conroller;
 
-import kz.alibek.marketplace.dto.UserRequestDto;
-import kz.alibek.marketplace.dto.UserResponseDto;
+import kz.alibek.marketplace.dto.auth.UserRequestDto;
+import kz.alibek.marketplace.dto.auth.UserResponseDto;
 import kz.alibek.marketplace.model.User;
 import kz.alibek.marketplace.model.UserRole;
 import kz.alibek.marketplace.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.http.parser.Authorization;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequiredArgsConstructor

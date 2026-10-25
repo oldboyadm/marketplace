@@ -1,4 +1,4 @@
-package kz.alibek.marketplace.dto;
+package kz.alibek.marketplace.dto.auth;
 
 import kz.alibek.marketplace.model.User;
 

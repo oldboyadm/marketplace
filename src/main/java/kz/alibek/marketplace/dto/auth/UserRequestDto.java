@@ -1,4 +1,4 @@
-package kz.alibek.marketplace.dto;
+package kz.alibek.marketplace.dto.auth;
 
 public record UserRequestDto(
         String name,
