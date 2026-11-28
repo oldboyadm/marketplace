@@ -32,7 +32,7 @@ export function CustomerHome({ categories }: { categories: UseQueryResult<Catego
             onSelectCategory={selectCategory}
             onSelectSubcategory={selectSubcategory}
           />
-          <CustomerContent categoryId={selectedCategoryId} subcategoryId={selectedSubcategoryId} />
+          <CustomerContent categories={categoryList} categoryId={selectedCategoryId} subcategoryId={selectedSubcategoryId} />
         </div>
       )}
     </div>
